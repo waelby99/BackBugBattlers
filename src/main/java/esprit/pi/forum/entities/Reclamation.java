@@ -14,22 +14,22 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @ToString
-public class Offre implements Serializable {
+public class Reclamation implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idOffre ;
+    private long idReclamation ;
 
-    private String intitule;
+    private LocalDateTime dateDeReclamation;
 
-    private String description;
+    private String titre;
 
-    private LocalDateTime dateDeCreation;
+    private String Description;
 
-    private  int nbPlaces;
+    private boolean status;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "offre")
-    private Set<Candidature> candidaturess;
+    @Lob
+    private byte[] image;
 
     @ManyToOne
     private User user;

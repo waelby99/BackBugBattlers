@@ -1,4 +1,5 @@
 package esprit.pi.forum.entities;
+
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,23 +15,26 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @ToString
-public class Offre implements Serializable {
+public class Candidature implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idOffre ;
+    private long idCondidature ;
 
-    private String intitule;
+    @Lob
+    private byte[] lettreDeMotivation;
 
-    private String description;
+    @Lob
+    private byte [] cv;
 
-    private LocalDateTime dateDeCreation;
+    private LocalDateTime dateDeCandidature;
 
-    private  int nbPlaces;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "offre")
-    private Set<Candidature> candidaturess;
+    @Enumerated(EnumType.STRING)
+    private Status status;
 
     @ManyToOne
     private User user;
+
+    @ManyToOne
+    private Offre offre;
 }

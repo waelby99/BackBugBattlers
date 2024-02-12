@@ -1,9 +1,9 @@
 package esprit.pi.forum.entities;
-import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import jakarta.persistence.*;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -14,23 +14,16 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @ToString
-public class Offre implements Serializable {
+public class Materiel implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idOffre ;
+    private long idMateriel ;
 
     private String intitule;
 
-    private String description;
-
-    private LocalDateTime dateDeCreation;
-
-    private  int nbPlaces;
-
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "offre")
-    private Set<Candidature> candidaturess;
+    private int nbPieces;
 
     @ManyToOne
-    private User user;
+    private Session sessions;
 }
