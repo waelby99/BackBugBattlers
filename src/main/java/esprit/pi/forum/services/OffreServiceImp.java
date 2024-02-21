@@ -22,6 +22,15 @@ public class OffreServiceImp implements IOffreService{
         return offreRepository.findAll();
     }
 
+    @Override
+    public Offre getOffreById(long idOffre) {return offreRepository.findById(idOffre).orElse(null);}
+
+    @Override
+    public void deleteOffre(long idOffre) {offreRepository.deleteById(idOffre);}
+
+    @Override
+    public Offre updateOffre(Offre o) {return offreRepository.save(o);}
+
 }
 
 

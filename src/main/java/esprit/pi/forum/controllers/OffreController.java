@@ -24,4 +24,18 @@ public class OffreController {
         return iOffreService.getAllOffres();
     }
 
+    @PutMapping("/modifierOffre")
+    public Offre updateOffre(@RequestBody Offre o){return iOffreService.updateOffre(o);}
+
+    @GetMapping("/getOffre/{idOffre}")
+    public Offre findById(@PathVariable long idOffre){
+        return iOffreService.getOffreById(idOffre);
+    }
+
+    @DeleteMapping("/supprimerOffre/{idOffre}")
+    public void deleteOffre(@PathVariable long idOffre){
+        iOffreService.deleteOffre(idOffre);
+    }
+
 }
+
