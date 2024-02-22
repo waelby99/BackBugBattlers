@@ -1,5 +1,6 @@
 package esprit.pi.forum.services;
 
+import esprit.pi.forum.entities.Candidature;
 import esprit.pi.forum.entities.Offre;
 
 import java.util.List;

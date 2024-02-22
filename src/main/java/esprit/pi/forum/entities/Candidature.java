@@ -19,9 +19,10 @@ public class Candidature implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idCondidature ;
+    private long idCandidature ;
 
     @Lob
+
     private byte[] lettreDeMotivation;
 
     @Lob
